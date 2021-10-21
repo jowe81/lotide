@@ -3,13 +3,13 @@ const assertEqual = function(actual, expected) {
   let reset = "\x1b[0m";
   let bgRed = "\x1b[41m";
   let green = "\x1b[32m";
-  let passPrefix = green + "**PASS**" + reset + " ";
-  let failPrefix = bgRed + "**FAIL**" + reset + " ";
+  let passPrefix = `${green} **PASS** ${reset}`;
+  let failPrefix = `${bgRed} **FAIL** ${reset}`;
 
   if (actual === expected) {
-    console.log(passPrefix + "Assertion Passed: [" + actual + "] === [" + expected + "]");
+    console.log(`${passPrefix} Assertion Passed: [${actual}] === [${expected}]`);
   } else {
-    console.log(failPrefix + "Assertion Failed: [" + actual + "] !== [" + expected + "]");
+    console.log(`${failPrefix} Assertion Failed: [${actual}] !== [${expected}]`);
   }
 };
 
