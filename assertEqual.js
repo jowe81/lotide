@@ -1,10 +1,6 @@
 const assertEqual = function(actual, expected) {
-  //Console colors
-  let reset = "\x1b[0m";
-  let bgRed = "\x1b[41m";
-  let green = "\x1b[32m";
-  let passPrefix = green + "**PASS**" + reset + " ";
-  let failPrefix = bgRed + "**FAIL**" + reset + " ";
+  let passPrefix = "✅✅✅ ";
+  let failPrefix = "❌❌❌ ";
 
   if (actual === expected) {
     console.log(passPrefix + "Assertion Passed: [" + actual + "] === [" + expected + "]");
