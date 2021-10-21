@@ -3,9 +3,9 @@ const assertEqual = function(actual, expected) {
   let failPrefix = "❌❌❌ ";
 
   if (actual === expected) {
-    console.log(passPrefix + "Assertion Passed: [" + actual + "] === [" + expected + "]");
+    console.log(`${passPrefix} Assertion Passed: [${actual}] === [${expected}]`);
   } else {
-    console.log(failPrefix + "Assertion Failed: [" + actual + "] !== [" + expected + "]");
+    console.log(`${failPrefix} Assertion Failed: [${actual}] !== [${expected}]`);
   }
 };
 
