@@ -25,7 +25,7 @@ const eqArrays = function(a,b) {
 
 const middle = function(a) {
   if (a && a.length > 2) {
-    if (a.length%2) {
+    if (a.length % 2) {
       //Odd array length: return center element
       return [a[Math.floor(a.length / 2)]];
     } else {
