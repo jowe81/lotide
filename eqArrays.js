@@ -17,8 +17,13 @@ const eqArrays = function(a,b) {
   if (!(a && b && a.length === b.length))
     return false;
   for (let i = 0; i < a.length; i++) {
-    if (a[i] !== b[i])
-      return false;
+    if (Array.isArray(a[i])) {
+      //Nested array
+      return eqArrays(a[i], b[i]);
+    } else {
+      if (a[i] !== b[i])
+        return false;
+    }
   }
   return true;
 };
@@ -30,4 +35,7 @@ assertEqual(eqArrays([], [1]), false);
 assertEqual(eqArrays([], []), true);
 assertEqual(eqArrays("A","A"), true);
 assertEqual(eqArrays(1), false);
+
+assertEqual(eqArrays([1, [2 ,[3, 4]]], [1, [2 ,[3, 4]]]), true);
+assertEqual(eqArrays([1, [2 , 3 , [3, 4]]], [1, [2 ,[3, 4]]]), false);
 
