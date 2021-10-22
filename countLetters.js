@@ -17,11 +17,7 @@ const countLetters = function(str) {
   let output = {};
   for (let char of str) {
     if (char !== " ") { //skip spaces
-      if (output.hasOwnProperty(char)) {
-        output[char]++;
-      } else {
-        output[char] = 1;
-      }
+      output.hasOwnProperty(char) ? output[char]++ : output[char] = 1;
     }
   }
   return output;

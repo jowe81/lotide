@@ -18,13 +18,7 @@ const countOnly = function(allItems, itemsToCount) {
   let output = {};
   for (let item of allItems) {
     if (itemsToCount.hasOwnProperty(item) && itemsToCount[item]) {
-      if (output.hasOwnProperty(item)) {
-        output[item]++;
-      } else {
-        output[item] = 1;
-      }
-      // Why does the following alternative to the above if-statement not work?
-      // output.hasOwnProperty(item) ? output[item] = 1 : output[item]++;
+      output.hasOwnProperty(item) ? output[item]++ : output[item] = 1;
     }
   }
   return output;
