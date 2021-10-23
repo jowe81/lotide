@@ -7,10 +7,8 @@ const assertArraysEqual = function(a, b) {
   let failPrefix = `${bgRed} **FAIL** ${reset}`;
 
   if (eqArrays(a,b)) {
-    //console.log(`${passPrefix} Assertion Passed: arrays are equal!`);
     console.log(`${passPrefix} [${a}] === [${b}]`);
   } else {
-    //console.log(`${failPrefix} Assertion Failed: arrays are different!`);
     console.log(`${failPrefix} [${a}] !== [${b}]`);
   }
 };
@@ -42,5 +40,5 @@ const map = function(array, callback) {
 //Tests
 assertArraysEqual(map(["ground", "control", "to", "major", "tom"],word => word[0]),["g","c","t","m","t"]);
 assertArraysEqual(map(["ground", "control", "to", "major", "tom"],word => word.length),[6,7,2,5,3]);
-assertArraysEqual(map(["ground", "control", "to", "major", "tom"],word => word.length>3),[true,true,false,true,false]);
+assertArraysEqual(map(["ground", "control", "to", "major", "tom"],word => word.length > 3),[true,true,false,true,false]);
 assertArraysEqual(map([1, 2, 3, 4, 5],x => (x % 2 === 0) ? x : -x),[-1,2,-3,4,-5]);
