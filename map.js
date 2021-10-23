@@ -30,28 +30,17 @@ const eqArrays = function(a,b) {
   return true;
 };
 
-//Originally submitted version without functionality for nested arrays
-/*
-const eqArrays = function(a,b) {
-  if (!(a && b && a.length === b.length))
-    return false;
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] !== b[i])
-      return false;
+
+const map = function(array, callback) {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item));
   }
-  return true;
+  return results;
 };
-*/
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]); //PASS
-assertArraysEqual([1, 2, 3], [1, 2, "3"]); //FAIL
-assertArraysEqual([1, 2, 3], [1]); //FAIL
-assertArraysEqual([], [1]); //FAIL
-assertArraysEqual([], []); //PASS
-assertArraysEqual("A","A"); //PASS
-assertArraysEqual(1); //FAIL
-
-assertArraysEqual([1, [2 ,[3, 4]]], [1, [2 ,[3, 4]]]); //PASS
-assertArraysEqual([1, [2 , 3 , [3, 4]]], [1, [2 ,[3, 4]]]); //FAIL
-
-
+//Tests
+assertArraysEqual(map(["ground", "control", "to", "major", "tom"],word => word[0]),["g","c","t","m","t"]);
+assertArraysEqual(map(["ground", "control", "to", "major", "tom"],word => word.length),[6,7,2,5,3]);
+assertArraysEqual(map(["ground", "control", "to", "major", "tom"],word => word.length>3),[true,true,false,true,false]);
+assertArraysEqual(map([1, 2, 3, 4, 5],x => (x % 2 === 0) ? x : -x),[-1,2,-3,4,-5]);
