@@ -14,7 +14,7 @@ const assertEqual = function(actual, expected) {
 };
 
 const findKeyByValue = function(obj,val) {
-  for (key in obj) {
+  for (let key in obj) {
     if (obj[key] === val) {
       return key;
     }
@@ -22,7 +22,7 @@ const findKeyByValue = function(obj,val) {
 };
 
 //Tests
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
