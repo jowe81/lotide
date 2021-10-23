@@ -7,10 +7,8 @@ const assertArraysEqual = function(a, b) {
   let failPrefix = `${bgRed} **FAIL** ${reset}`;
 
   if (eqArrays(a,b)) {
-    //console.log(`${passPrefix} Assertion Passed: arrays are equal!`);
     console.log(`${passPrefix} [${a}] === [${b}]`);
   } else {
-    //console.log(`${failPrefix} Assertion Failed: arrays are different!`);
     console.log(`${failPrefix} [${a}] !== [${b}]`);
   }
 };
