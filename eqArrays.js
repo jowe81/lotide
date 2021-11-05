@@ -1,18 +1,6 @@
-const assertEqual = function(actual, expected) {
-  //Console colors
-  let reset = "\x1b[0m";
-  let bgRed = "\x1b[41m";
-  let green = "\x1b[32m";
-  let passPrefix = `${green} **PASS** ${reset}`;
-  let failPrefix = `${bgRed} **FAIL** ${reset}`;
+const assertEqual = require('./assertEqual');
 
-  if (actual === expected) {
-    console.log(`${passPrefix} Assertion Passed: [${actual}] === [${expected}]`);
-  } else {
-    console.log(`${failPrefix} Assertion Failed: [${actual}] !== [${expected}]`);
-  }
-};
-
+//Test Arrays for identity (including nested)
 const eqArrays = function(a,b) {
   if (!(a && b && a.length === b.length))
     return false;
@@ -28,14 +16,4 @@ const eqArrays = function(a,b) {
   return true;
 };
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 3], [1, 2, "3"]), false);
-assertEqual(eqArrays([1, 2, 3], [1]), false);
-assertEqual(eqArrays([], [1]), false);
-assertEqual(eqArrays([], []), true);
-assertEqual(eqArrays("A","A"), true);
-assertEqual(eqArrays(1), false);
-
-assertEqual(eqArrays([1, [2 ,[3, 4]]], [1, [2 ,[3, 4]]]), true);
-assertEqual(eqArrays([1, [2 , 3 , [3, 4]]], [1, [2 ,[3, 4]]]), false);
-
+module.exports = eqArrays;
