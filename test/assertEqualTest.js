@@ -1,6 +1,8 @@
-const assertEqual = require('../assertEqual');
+//Old test code for old function - not needed anymore
 
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("hello", "hello");
-assertEqual(1, -1);
+// const assertEqual = require('../assertEqual');
+
+// assertEqual("Lighthouse Labs", "Bootcamp");
+// assertEqual(1, 1);
+// assertEqual("hello", "hello");
+// assertEqual(1, -1);

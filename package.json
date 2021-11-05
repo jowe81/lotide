@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@jowe81/lotide",
   "version": "1.0.0",
-  "description": "LHL Flex Module 1 Project",
-  "main": "assertArraysEqual.js",
+  "description": "lodash-mini-clone (LHL Flex Module 1 Project)",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
