@@ -1,16 +1,22 @@
-// Old test code for old function - not needed anymore
+const assert = require('chai').assert;
+const assertArraysEqual = require('../assertArraysEqual');
 
-// const assertArraysEqual = require('../assertArraysEqual');
+describe("#assertArraysEqual", () => {
 
-// assertArraysEqual([1, 2, 3], [1, 2, 3]); //PASS
-// assertArraysEqual([1, 2, 3], [1, 2, "3"]); //FAIL
-// assertArraysEqual([1, 2, 3], [1]); //FAIL
-// assertArraysEqual([], [1]); //FAIL
-// assertArraysEqual([], []); //PASS
-// assertArraysEqual("A","A"); //PASS
-// assertArraysEqual(1); //FAIL
+  it("should return true for [1, 2, 3], [1, 2, 3] ", () => {
+    assert.deepEqual(assertArraysEqual([1, 2, 3], [1, 2, 3]), true);
+  });
 
-// assertArraysEqual([1, [2 ,[3, 4]]], [1, [2 ,[3, 4]]]); //PASS
-// assertArraysEqual([1, [2 , 3 , [3, 4]]], [1, [2 ,[3, 4]]]); //FAIL
+  it("should return false for [], [1]", () => {
+    assert.deepEqual(assertArraysEqual([], [1]), false);
+  });
 
+  it("should return true for [1, [2 ,[3, 4]]], [1, [2 ,[3, 4]]]", () => {
+    assert.deepEqual(assertArraysEqual([1, [2 ,[3, 4]]], [1, [2 ,[3, 4]]]), true);
+  });
 
+  it("should return false for [1, [2 , 3 , [3, 4]]], [1, [2 ,[3, 4]]]", () => {
+    assert.deepEqual(assertArraysEqual([1, [2 , 3 , [3, 4]]], [1, [2 ,[3, 4]]]), false);
+  });
+
+});

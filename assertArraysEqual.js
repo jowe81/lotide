@@ -10,8 +10,10 @@ const assertArraysEqual = function(a, b) {
 
   if (eqArrays(a,b)) {
     console.log(`${passPrefix} [${a}] === [${b}]`);
+    return true;
   } else {
     console.log(`${failPrefix} [${a}] !== [${b}]`);
+    return false;
   }
 };
 

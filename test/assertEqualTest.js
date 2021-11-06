@@ -1,8 +1,14 @@
-//Old test code for old function - not needed anymore
+const assert = require('chai').assert;
+const assertEqual = require('../assertEqual');
 
-// const assertEqual = require('../assertEqual');
+describe("#assertEqual", () => {
 
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-// assertEqual("hello", "hello");
-// assertEqual(1, -1);
+  it('should return false for "Lighthouse Labs", "Bootcamp" ', () => {
+    assert.strictEqual(assertEqual("Lighthouse Labs", "Bootcamp"), false);
+  });
+
+  it('should return true for false, false ', () => {
+    assert.strictEqual(assertEqual(false, false), true);
+  });
+
+});

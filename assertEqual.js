@@ -8,8 +8,10 @@ const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
     console.log(`${passPrefix} Assertion Passed: [${actual}] === [${expected}]`);
+    return true;
   } else {
     console.log(`${failPrefix} Assertion Failed: [${actual}] !== [${expected}]`);
+    return false;
   }
 };
 
