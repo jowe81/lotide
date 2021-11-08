@@ -1,5 +1,3 @@
-const eqArrays = require('./eqArrays');
-
 const flatten = function(a) {
   let output = [];
   for (let i = 0; i < a.length; i++) {

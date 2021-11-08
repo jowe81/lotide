@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 //Return array without its first element
 const tail = function(arg) {
   let result = [];
