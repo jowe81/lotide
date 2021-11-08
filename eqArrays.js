@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 //Test Arrays for identity (including nested)
 const eqArrays = function(a,b) {
   if (!(a && b && a.length === b.length))
